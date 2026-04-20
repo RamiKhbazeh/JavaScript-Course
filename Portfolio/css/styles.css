@@ -1,0 +1,402 @@
+html {
+    scroll-behavior: smooth; /*This ensures that the page scrolling is smooth when the buttons on the nav bar is clicked */
+}
+
+/* Body */
+body {
+    margin: 0%; /* This ensures our site displays all the way to the edge of the browser screen */
+    opacity: 1; /* This and transition affect the page loading fade in effect */
+    transition: 3s opacity; /* This causes a 3 second fade in */
+    letter-spacing: .2vw; /* vw is a relative measurement, 1vw is equal to 1% of the viewport width */
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw; 
+    overflow-x: hidden; /* This prevents the horizontal scroll bar from appearing when the quote is hovered over */
+    user-select: none; /* This prevents the text on the webpage from being highlighted by the user */
+    background-color: #1a1a1a; /* Dark background to make red pop */
+    color: white;
+}
+
+/* This section contributes to the fade effect for the page that occurs when the page is loaded */
+body.fade-out {
+    opacity: .1; /* This sets the level of opacity at the start of page load */
+}
+
+/* Heading 1 elements */
+h1 {
+    text-transform: uppercase; /*capitalizing all h1 headings */
+    font-family: "Trebuchet MS", Optima; /* Sets the font family of all h1 headings */
+    text-align: center; /* Centering all h1 elements */
+    margin-top: 3%; /* Adds a small margin above h1 elements */
+    color: #cc0000; /* Changed to Red */
+}
+
+/* Heading 1 element hover effect */
+h1:hover {
+    filter: brightness(1.2); /* Makes the red brighter on hover */
+    transform: scale(1.1); /* When the h1 elements are hovered over they increase in size by 1.1 */
+    transition: transform 1s; /* This causes the transformation to last 1 second */
+}
+
+/* Styling for Portfolio Title Text */
+.white-text {
+    color: #fff;/* This is used to change the color of the Portfolio Title text */
+    padding-top: 10vh; /* Adds padding (equal to 10% of the viewport height) to the top of the Portfolio Title text */
+}
+
+/* Paragraph elements */
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify; /* This justifies the text within paragraph elements */
+    letter-spacing: .1vw; /* This expands the text slightly */
+    font-size: 2.5vw; /* Relative font sizing equal to 2.5% of the viewport width */
+    padding-left: 1vw; /* Relative padding equal to 1% of the viewport width */
+    padding-right: 1vw; /* Relative padding equal to 1% of the viewport width */
+}
+
+/* Paragraph element hover effect */
+p:hover {
+    transition: transform 1s; /* This makes the transform effect last 1 second */
+    transform: scale(1.01); /* This makes the paragraphs increase slightly in size when hovered over */
+}
+
+/* Center class - this applies to all centered text */
+.center {
+    text-align: center; /* This center aligns the text */
+}
+
+/* Center align elements hover effect - This only affects the quote, github link, and footer */
+.center:hover {
+    transition: transform 2s; /* This makes the transform effect last 2 seconds */
+    transform: scale(1.1); /* This makes the elements with class "center" increase in size by 1.1 when hovered over */
+}
+
+/* Anchor elements */
+a {
+    color: #ff4d4d; /* Changed from blue to a light red */
+    cursor: pointer; /* This ensures all links change the mouse to a pointer when hovered over or clicked */
+    text-decoration: underline; /* This ensures all links are underlined */
+}
+
+/* Quotation elements */
+q {
+    font-style: italic; /* Makes the quote italicized */
+}
+
+/* Image elements */
+img {
+    filter: grayscale(100%); /* Full grayscale for a dramatic effect */
+    border-radius: 8px; /* Gives all images slightly rounded corners */
+    max-width: 100%; /* Ensures all images stay within the width of their container */
+    max-height: 100%;
+    display: block; /* By specifying block display we can ensure our images are able to be centered */
+    margin: auto auto auto auto; /* This centers all images */
+    border: 1px solid #333;
+}
+
+/* Image element hover effects */
+img:hover {
+	filter: grayscale(0%);  /* Brings back all color on hover */
+    border: 1px solid #cc0000; /* Adds a red border on hover */
+}
+
+/*Styling for footer element */
+footer {
+    padding: 2%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
+    background-color: #000; /* Black footer */
+    color: white;
+}
+/***** End of General Styling *****/
+
+/***** Navbar Styling *****/
+.Navbar {
+    overflow: hidden; 
+    background-color: #000; /* Solid black */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1; 
+    border-bottom: 2px solid #8B0000; /* Dark Red border under navbar */
+    animation: moveNav 5s; 
+}
+
+@keyframes moveNav {
+    from {left: -100vw;} 
+    to { left: 0vw;} 
+}
+
+/*Navbar Links */
+.Navbar a {
+    float: left; 
+    display: block; 
+    color: white; 
+    padding: .75vw 1vw; 
+    text-decoration: none; 
+    font-family: Avant Garde, Helvetica; 
+    font-size: 1.5vw; 
+    text-align: center; 
+    position: relative; 
+    animation: moveNavText 5.75s; 
+}
+
+@keyframes moveNavText {
+    from {top: -100vw;} 
+    to {top: 0vw;} 
+}
+
+/*Navbar hover effects */
+.Navbar a:hover {
+    background-color: #8B0000; /* Dark Red background on hover */
+    color: white; 
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
+/* Navbar home button */
+.Navbar a.active { 
+    background-color: #cc0000; /* Bright Red for active link */
+}
+/***** End of Navbar Styling *****/
+
+/***** Video Styling *****/
+#Typing_Video {
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    min-width: 100%; 
+    z-index: -1; 
+}
+
+.Video_Text {
+    background: rgba(20, 0, 0, 0.6); /* Slightly red tinted overlay */
+    color: white; 
+    width: 100%; 
+    height: 100vh; 
+    padding-top: 2vh; 
+    position: relative; 
+    animation: moveVideoText 5.75s; 
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;} 
+    to {top: 0vw;} 
+}
+/***** End of Video Styling *****/
+
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(0, 0, 0, 0.5); /* Darker background for slides */    
+}
+
+.mySlides{
+    display: none; 
+}
+
+#Slideshow_Container {
+    width: 39.5vw; 
+    height: auto; 
+    padding-top: 4%; 
+    position: relative; 
+    margin:auto; 
+}
+
+#Slideshow_Container a {
+    text-decoration: none;
+}
+
+.Slideshow_Images {
+    vertical-align: middle; 
+    height: auto; 
+    box-shadow: 0px 5px 15px 5px rgba(204, 0, 0, 0.3); /* Red glow shadow */
+    width: 100%; 
+}
+
+.Previous, .Next {
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    width: auto; 
+    padding: 2vw; 
+    color: #cc0000; /* Red Arrows */
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0; 
+    user-select: none; 
+    transition: 0.6s ease; 
+}
+
+.Next {
+    right: 0; 
+    border-radius: 3px 0 0 3px; 
+}
+
+.Previous:hover, .Next:hover {
+    background-color: rgba(204, 0, 0, 0.8); /* Red background on arrow hover */
+    color: white; 
+}
+
+.text {
+    color: white; 
+    padding: 1vw;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    text-align: center; 
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw; 
+    background-color: rgba(139, 0, 0, 0.85); /* Dark Red text box */
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px; 
+}
+
+.dot {
+    cursor: pointer; 
+    height: 1vw; 
+    width: 1vw;
+    margin: .25vw; 
+    background-color: #333; /* Dark dots */
+    border-radius: 50%; 
+    display: inline-block; 
+    transition: background-color 0.6s ease; 
+    z-index: 1; 
+}
+
+.active, .dot:hover {
+    background-color: #cc0000; /* Red dots when active */
+}
+
+.fade {
+    animation-name: fade; 
+    animation-duration: 1.5s; 
+}
+
+@keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+/***** End Slideshow Styling *****/
+
+/***** Table Styling *****/
+* { 
+    box-sizing: border-box; 
+} 
+
+.Column_1 {
+    float: left;
+    width: 50%; 
+    padding: 1.6%;
+    height: 450px; 
+    background-color: #262626; /* Dark Grey */
+    color: white;
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #1a1a1a; /* Deeper Grey */
+    color: white;
+}
+
+.Row:after {
+	content: ""; 
+	display: table; 
+	clear: both; 
+}
+/***** End of Table Styling *****/
+
+/***** Contact Form Styling *****/
+.Pop_Up_Button {
+    position: fixed; 
+    bottom: 1.75vw; 
+    right: 1.75vw; 
+    width: 25vw; 
+    background-color: #cc0000; /* Red Button */
+    color: white; 
+    border: 2px solid white; 
+    cursor: pointer; 
+    animation: movePopup 5s; 
+}
+
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+.form-popup {
+    z-index: 8; 
+    display: none; 
+    position: fixed; 
+    bottom: .5vw; 
+    right: .5vw;
+}
+
+.form-container {
+    max-width: 49vw; 
+    padding: 1vw; 
+    background-color: #1a1a1a; /* Dark form background */
+    border: 2px solid #cc0000;
+    color: white;
+}
+
+.form-container input[type=text] {
+    width: 100%; 
+    padding: .93vw; 
+    margin: .6vw 0 .6vw 0; 
+    border: none; 
+    background: #333; /* Darker input boxes */
+    color: white;
+    font-size: 1vw; 
+}
+
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw; 
+    font-size: 1.5vw; 
+    font-weight: bold; 
+    padding: 1.5vw; 
+    cursor: pointer; 
+    width: 100%; 
+    height: auto; 
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; 
+    background-color: #8B0000; /* Dark Red on hover */
+    transition-duration: 1s; 
+    border-color: white; 
+}
+
+.form-container .btn {
+    background-color: #cc0000; 
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 1vh; 
+}
+
+.form-container .cancel {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.form-container .cancel:hover {
+    background-color: #000;
+    border-color: #cc0000;
+}
+/***** End of Contact Form Styling *****/
+
+/* Media Rules (Kept Same structure but ensured font visibility) */
+@media screen and (max-width: 527px) { p { font-size: 3.75vw; } }
+@media screen and (min-width: 528px) and (max-width: 660px) { p { font-size: 3.5vw; } }
+@media screen and (max-width: 1080px) {
+    .Navbar a { width: 20%; font-size: 2.5vw; }
+    .quote { font-size: 3.5vw; }
+    .white-text { font-size: 4.5vw; color: #ff4d4d; }
+}
+
+@media screen and (min-width: 2000px) {
+    h1 { margin-top: 0; }
+}
